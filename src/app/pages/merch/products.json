@@ -1,0 +1,38 @@
+﻿[
+	{
+		"name": "Rivne IT Space mug",
+		"description": "Ceramic mug with Rivne IT Space branding. A simple desk essential for coffee, tea, and long work sessions.",
+		"price": "UAH 720",
+		"label": "Mug"
+	},
+	{
+		"name": "Rivne IT Space t-shirt",
+		"description": "Soft cotton t-shirt with a minimal Rivne IT Space print. Clean everyday merch for meetups and casual wear.",
+		"price": "UAH 1400",
+		"label": "T-shirt"
+	},
+	{
+		"name": "Rivne IT Space laptop sticker",
+		"description": "Durable branded sticker designed for laptops, notebooks, and work setups.",
+		"price": "UAH 240",
+		"label": "Sticker"
+	},
+	{
+		"name": "Rivne IT Space hoodie",
+		"description": "Comfortable hoodie with Rivne IT Space branding. Made for cooler days, events, and everyday use.",
+		"price": "UAH 2600",
+		"label": "Hoodie"
+	},
+	{
+		"name": "Rivne IT Space cap",
+		"description": "Minimal cap with embroidered Rivne IT Space identity. A simple accessory for everyday city wear.",
+		"price": "UAH 960",
+		"label": "Cap"
+	},
+	{
+		"name": "Rivne IT Space socks",
+		"description": "Branded socks with a playful tech-community feel. A small merch item that still stands out.",
+		"price": "UAH 560",
+		"label": "Socks"
+	}
+]

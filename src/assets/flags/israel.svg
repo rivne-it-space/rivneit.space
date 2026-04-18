@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 48" role="img" aria-labelledby="title">
+  <title>Flag of Israel</title>
+  <rect width="64" height="48" fill="#fff"/>
+  <rect y="5" width="64" height="5" fill="#0038b8"/>
+  <rect y="38" width="64" height="5" fill="#0038b8"/>
+  <path d="M32 14 21 33h22L32 14Z" fill="none" stroke="#0038b8" stroke-width="2.6" stroke-linejoin="round"/>
+  <path d="M32 34 21 15h22L32 34Z" fill="none" stroke="#0038b8" stroke-width="2.6" stroke-linejoin="round"/>
+</svg>

@@ -1,0 +1,65 @@
+<main
+	class="mx-auto max-w-[var(--container)] px-3 pb-[calc(7rem+env(safe-area-inset-bottom))] pt-3 sm:px-4 sm:pb-12"
+>
+	<section
+		class="work-shell overflow-hidden rounded-[var(--radius-panel)] border border-[var(--c-border-soft)] bg-[var(--c-bg-secondary)] px-4 py-12 shadow-[var(--shadow-lg)] sm:px-6 sm:py-16 lg:px-8"
+	>
+		<header class="mx-auto max-w-[46rem] text-center">
+			<div
+				class="intro-icon mx-auto inline-flex h-16 w-16 items-center justify-center rounded-full border border-[var(--c-border-soft)] bg-[var(--c-bg-glass)] text-[var(--c-secondary)] shadow-[var(--shadow-sm)]"
+			>
+				<span class="material-symbols-outlined text-[28px]" aria-hidden="true"
+					>work_history</span
+				>
+			</div>
+
+			<p
+				class="mt-6 text-[12px] font-semibold uppercase tracking-[0.18em] text-[var(--c-secondary)]"
+				translate
+			>
+				Our work
+			</p>
+		</header>
+
+		<div class="mt-10 grid gap-5 sm:mt-12 lg:grid-cols-3 xl:gap-6">
+			@for (project of projects; track project.title) {
+				<article
+					class="project-card flex overflow-hidden rounded-[var(--radius-card)] border border-[var(--c-border)] bg-[var(--c-bg-elevated)]"
+				>
+					<div class="project-content flex flex-1 flex-col p-5 sm:p-6">
+						<h3
+							class="mt-5 text-xl font-semibold leading-7 text-[var(--c-text-secondary)]"
+						>
+							{{ project.title }}
+						</h3>
+						<p class="mt-3 text-sm leading-6 text-[var(--c-text-muted)]">
+							{{ project.description | translate }}
+						</p>
+
+						<div class="mt-5 flex flex-wrap gap-2">
+							@for (tag of project.tags; track tag) {
+								<span
+									class="rounded-full border border-[var(--c-border-soft)] bg-[var(--c-bg-glass)] px-3 py-1.5 text-xs font-medium text-[var(--c-text-primary)]"
+								>
+									{{ tag | translate }}
+								</span>
+							}
+						</div>
+
+						<div
+							class="mt-7 flex flex-col gap-2.5 sm:flex-row lg:mt-auto lg:flex-col lg:pt-7 xl:flex-row"
+						>
+							<a
+								class="project-primary-link inline-flex min-h-11 flex-1 items-center justify-center rounded-[var(--radius-sm)] bg-[var(--c-secondary)] px-4 text-sm font-semibold shadow-[var(--glow-secondary)] transition hover:brightness-110 focus:outline-none focus:ring-2 focus:ring-[var(--c-secondary)] focus:ring-offset-2 focus:ring-offset-[var(--c-bg-elevated)]"
+								href="#"
+								translate
+							>
+								View project
+							</a>
+						</div>
+					</div>
+				</article>
+			}
+		</div>
+	</section>
+</main>

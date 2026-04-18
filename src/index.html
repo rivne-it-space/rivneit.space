@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="uk-UA">
+	<head>
+		<meta charset="utf-8" />
+		<title>Рівне IT Space | Готові сайти для бізнесу в Рівному</title>
+		<base href="/" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<script>
+			try {
+				const storedMode = localStorage.getItem('theme.mode');
+				const preferredMode =
+					storedMode === 'dark' || storedMode === 'light'
+						? storedMode
+						: window.matchMedia('(prefers-color-scheme: dark)').matches
+							? 'dark'
+							: 'light';
+				if (storedMode !== 'dark' && storedMode !== 'light') {
+					localStorage.setItem('theme.mode', preferredMode);
+				}
+				document.documentElement.setAttribute('data-mode', preferredMode);
+			} catch {}
+		</script>
+
+		<meta
+			name="description"
+			content="Рівне IT Space створює готові сайти для бізнесу в Рівному, допомагає бути помітними в GPT та онлайн, налаштовує запуск і забезпечує щомісячну підтримку."
+		/>
+		<meta
+			name="keywords"
+			content="Рівне IT Space, сайти Рівне, готові сайти, сайти для бізнесу в Рівному, видимість у GPT, онлайн-присутність, сайт для малого бізнесу Рівне, сайт ресторану Рівне, сайт салону Рівне, сайт клініки Рівне, сайт для локального бізнесу"
+		/>
+		<meta name="author" content="Рівне IT Space" />
+		<meta name="robots" content="index, follow" />
+		<meta name="theme-color" content="#edf6ff" media="(prefers-color-scheme: light)" />
+		<meta name="theme-color" content="#07121f" media="(prefers-color-scheme: dark)" />
+
+		<meta itemprop="name" content="Рівне IT Space | Готові сайти для бізнесу в Рівному" />
+		<meta
+			itemprop="description"
+			content="Готові сайти для бізнесу в Рівному: видимість у GPT, довіра онлайн, швидкий запуск, повне володіння сайтом і щомісячна підтримка розробника."
+		/>
+		<meta itemprop="image" content="https://rivneit.space/assets/og-image.svg" />
+
+		<meta property="og:type" content="website" />
+		<meta property="og:site_name" content="Рівне IT Space" />
+		<meta property="og:locale" content="uk_UA" />
+		<meta property="og:url" content="https://rivneit.space/" />
+		<meta property="og:title" content="Готові сайти для бізнесу в Рівному | Рівне IT Space" />
+		<meta
+			property="og:description"
+			content="Створюємо готові концепції сайтів для бізнесу в Рівному, допомагаємо стати помітними в GPT та онлайн, налаштовуємо запуск і супроводжуємо сайт щомісяця."
+		/>
+		<meta property="og:image" content="https://rivneit.space/assets/og-image.svg" />
+		<meta property="og:image:alt" content="Готові сайти Рівне IT Space для бізнесу в Рівному" />
+		<meta property="og:image:width" content="1200" />
+		<meta property="og:image:height" content="630" />
+
+		<meta name="twitter:card" content="summary_large_image" />
+		<meta name="twitter:title" content="Рівне IT Space | Сайти для бізнесу в Рівному" />
+		<meta
+			name="twitter:description"
+			content="Готові сайти для бізнесу в Рівному, якому потрібні видимість у GPT та онлайн, швидкий запуск, повне володіння і щомісячна підтримка розробника."
+		/>
+		<meta name="twitter:image" content="https://rivneit.space/assets/og-image.svg" />
+		<meta name="twitter:image:src" content="https://rivneit.space/assets/og-image.svg" />
+
+		<link rel="canonical" href="https://rivneit.space/" />
+		<link rel="icon" type="image/x-icon" href="favicon.png" />
+
+		<script type="application/ld+json">
+			{
+				"@context": "https://schema.org",
+				"@type": "ProfessionalService",
+				"name": "Рівне IT Space",
+				"url": "https://rivneit.space/",
+				"image": "https://rivneit.space/assets/og-image.svg",
+				"description": "Рівне IT Space створює готові сайти для бізнесу в Рівному та допомагає бути помітними в GPT і онлайн.",
+				"areaServed": {
+					"@type": "City",
+					"name": "Рівне"
+				},
+				"serviceType": [
+					"Готові сайти для бізнесу",
+					"Налаштування запуску сайту",
+					"Щомісячна підтримка сайту",
+					"Видимість у GPT та онлайн"
+				]
+			}
+		</script>
+
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+			rel="stylesheet"
+		/>
+		<link
+			href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined"
+			rel="stylesheet"
+		/>
+	</head>
+	<body>
+		<app-root></app-root>
+	</body>
+</html>

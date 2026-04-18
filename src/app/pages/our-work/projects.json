@@ -1,0 +1,23 @@
+﻿[
+	{
+		"badge": "Built project",
+		"category": "Restaurant website",
+		"title": "Sofiyivka & Table",
+		"description": "A polished website made for a modern Rivne restaurant with menu highlights, booking flow, location details, and a strong mobile experience.",
+		"tags": ["Landing page", "Restaurant", "Mobile-ready", "Booking-focused"]
+	},
+	{
+		"badge": "Built project",
+		"category": "Beauty website",
+		"title": "Sadova Studio",
+		"description": "A premium beauty and wellness website made to present services clearly, build trust, and support appointment-driven customer journeys.",
+		"tags": ["Service website", "Beauty", "Multi-section", "Lead generation"]
+	},
+	{
+		"badge": "Built project",
+		"category": "Clinic website",
+		"title": "Central Dental",
+		"description": "A clean healthcare website made around credibility, key services, contact clarity, and an accessible structure for new patient enquiries.",
+		"tags": ["Clinic", "Trust-focused", "Responsive", "Business website"]
+	}
+]
