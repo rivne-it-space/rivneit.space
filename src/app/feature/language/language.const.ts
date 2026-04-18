@@ -29,14 +29,6 @@ export const LANGUAGES: LanguageOption[] = [
 		htmlLang: 'de',
 	},
 
-	// --- Tier 3 (Rivne-specific) ---
-	{
-		code: 'he',
-		label: 'עברית',
-		flagSrc: 'flags/israel.svg',
-		htmlLang: 'he',
-	},
-
 	// --- Tier 4 (secondary EU) ---
 	{
 		code: 'fr',

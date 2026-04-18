@@ -1,23 +1,23 @@
-﻿[
+[
+	{
+		"badge": "Built project",
+		"category": "Cafe website",
+		"title": "Lebedynka Brunch",
+		"description": "A warm Rivne cafe website built around breakfast menus, fresh pastry photos, table booking, and quick map access near the city center.",
+		"tags": ["Cafe", "Breakfast menu", "Photo-led", "Map-ready"]
+	},
 	{
 		"badge": "Built project",
 		"category": "Restaurant website",
-		"title": "Sofiyivka & Table",
-		"description": "A polished website made for a modern Rivne restaurant with menu highlights, booking flow, location details, and a strong mobile experience.",
-		"tags": ["Landing page", "Restaurant", "Mobile-ready", "Booking-focused"]
+		"title": "Basiv Kut Terrace",
+		"description": "A seasonal restaurant page for Rivne guests with banquet formats, terrace atmosphere, menu highlights, and a clear reservation path.",
+		"tags": ["Restaurant", "Terrace", "Banquets", "Booking-focused"]
 	},
 	{
 		"badge": "Built project",
-		"category": "Beauty website",
-		"title": "Sadova Studio",
-		"description": "A premium beauty and wellness website made to present services clearly, build trust, and support appointment-driven customer journeys.",
-		"tags": ["Service website", "Beauty", "Multi-section", "Lead generation"]
-	},
-	{
-		"badge": "Built project",
-		"category": "Clinic website",
-		"title": "Central Dental",
-		"description": "A clean healthcare website made around credibility, key services, contact clarity, and an accessible structure for new patient enquiries.",
-		"tags": ["Clinic", "Trust-focused", "Responsive", "Business website"]
+		"category": "Bar website",
+		"title": "Soborna Craft Bar",
+		"description": "A compact HoReCa site for a Rivne craft bar with events, signature drinks, food delivery links, and social channels in one place.",
+		"tags": ["Craft bar", "Events", "Delivery links", "Social channels"]
 	}
 ]
