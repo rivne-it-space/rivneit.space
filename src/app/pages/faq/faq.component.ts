@@ -1,24 +1,13 @@
 import { ChangeDetectionStrategy, Component, computed, inject, input, signal } from '@angular/core';
 import { TranslatePipe } from '@wawjs/ngx-translate';
-import faqData from '../../../assets/data/faq.json';
-import faqTranslationsData from '../../../assets/data/faq.translations.json';
-import { LanguageCode } from '../../feature/language/language.type';
-import { LanguageService } from '../../feature/language/language.service';
-import { FaqAudience, FaqItem } from './faq-item.interface';
+import { Faq, FaqAudience } from '../../feature/faq/faq.interface';
+import { FaqService } from '../../feature/faq/faq.service';
 
 interface FaqPageContent {
 	readonly eyebrow: string;
 	readonly title: string;
 	readonly intro: string;
 }
-
-interface FaqTranslation {
-	readonly question: Partial<Record<LanguageCode, string>>;
-	readonly answer: Partial<Record<LanguageCode, readonly string[]>>;
-}
-
-const faqItems = faqData as readonly FaqItem[];
-const faqTranslations = faqTranslationsData as Record<string, FaqTranslation | undefined>;
 
 const pageContent: Record<FaqAudience, FaqPageContent> = {
 	public: {
@@ -46,35 +35,20 @@ const pageContent: Record<FaqAudience, FaqPageContent> = {
 	changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class FaqComponent {
-	private readonly _languageService = inject(LanguageService);
+	private readonly _faqService = inject(FaqService);
 
 	readonly audience = input<FaqAudience>('public');
 	protected readonly openItemId = signal<string | null>(null);
 	protected readonly content = computed(() => pageContent[this.audience()]);
-	protected readonly language = this._languageService.language;
 	protected readonly items = computed(() =>
-		faqItems
-			.filter((item) => item.audience === this.audience())
-			.map((item) => this._translateItem(item, this.language())),
+		this._faqService.faqs().filter((item) => item.audience === this.audience()),
 	);
 
-	protected isOpen(item: FaqItem) {
+	protected isOpen(item: Faq) {
 		return this.openItemId() === item.id;
 	}
 
-	protected toggleItem(item: FaqItem) {
+	protected toggleItem(item: Faq) {
 		this.openItemId.update((id) => (id === item.id ? null : item.id));
-	}
-
-	private _translateItem(item: FaqItem, language: LanguageCode): FaqItem {
-		const translation = faqTranslations[item.id];
-		const question = translation?.question[language]?.trim();
-		const answer = translation?.answer[language]?.filter((paragraph) => paragraph.trim());
-
-		return {
-			...item,
-			question: question || item.question,
-			answer: answer?.length ? answer : item.answer,
-		};
 	}
 }

@@ -1,21 +1,13 @@
-import { ChangeDetectionStrategy, Component } from '@angular/core';
-import { TranslateDirective, TranslatePipe } from '@wawjs/ngx-translate';
-
-import products from './products.json';
-
-type MerchItem = {
-	name: string;
-	description: string;
-	price: string;
-	label: string;
-};
+import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
+import { TranslateDirective } from '@wawjs/ngx-translate';
+import { MerchService } from '../../feature/merch/merch.service';
 
 @Component({
-	imports: [TranslateDirective, TranslatePipe],
+	imports: [TranslateDirective],
 	templateUrl: './merch.component.html',
 	styleUrl: './merch.component.scss',
 	changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class MerchComponent {
-	protected readonly merchItems: MerchItem[] = products;
+	protected readonly merchItems = inject(MerchService).products;
 }

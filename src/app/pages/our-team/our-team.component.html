@@ -29,19 +29,19 @@
 	</section>
 
 	<div class="mt-10 space-y-12 sm:mt-12 sm:space-y-14">
-		@for (section of teamSections; track section.title) {
+		@for (section of teamSections(); track section.title) {
 			<section>
 				<div
 					class="mb-5 flex items-end justify-between gap-4 border-b border-[var(--c-border-soft)] pb-3"
 				>
 					<div>
 						<h2 class="mt-1 text-xl font-semibold text-[var(--c-text-secondary)]">
-							{{ section.title | translate }}
+							{{ section.title }}
 						</h2>
 					</div>
 					<p class="text-sm font-medium text-[var(--c-text-muted)]">
 						{{ section.members.length }}
-						{{ (section.members.length === 1 ? 'person' : 'people') | translate }}
+						{{ section.members.length === 1 ? 'person' : 'people' }}
 					</p>
 				</div>
 
@@ -72,14 +72,14 @@
 									<p
 										class="mt-1 text-sm font-medium leading-5 text-[var(--c-secondary)]"
 									>
-										{{ member.role | translate }}
+										{{ member.role }}
 									</p>
 								</div>
 
 								<div
 									class="mt-4 space-y-1 text-sm leading-5 text-[var(--c-text-muted)]"
 								>
-									<p>{{ member.period | translate }}</p>
+									<p>{{ member.period }}</p>
 									<p>{{ member.company }}</p>
 								</div>
 

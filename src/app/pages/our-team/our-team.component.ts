@@ -1,83 +1,38 @@
 import { NgOptimizedImage } from '@angular/common';
-import { ChangeDetectionStrategy, Component } from '@angular/core';
-import { TranslateDirective, TranslatePipe } from '@wawjs/ngx-translate';
-
-type SocialLink = {
-	label: string;
-	icon: 'linkedin' | 'github' | 'email' | 'instagram';
-	href: string;
-	external?: boolean;
-};
-
-type TeamMember = {
-	name: string;
-	role: string;
-	period: string;
-	company: string;
-	image: string;
-	socials: SocialLink[];
-};
+import { ChangeDetectionStrategy, Component, computed, inject } from '@angular/core';
+import { TranslateDirective } from '@wawjs/ngx-translate';
+import { Profile } from '../../feature/profile/profile.interface';
+import { ProfileService } from '../../feature/profile/profile.service';
 
 type TeamSection = {
 	title: string;
-	members: TeamMember[];
+	members: Profile[];
 };
 
-const DENYS_HONCHAR = {
-	name: 'Denys Honchar',
-	period: '2016 - Present',
-	company: 'Volyn IT Space',
-	image: 'profile/honchar-denys.jpg',
-	socials: [
-		{
-			label: 'LinkedIn',
-			icon: 'linkedin',
-			href: 'https://example.com/denys-honchar/linkedin',
-			external: true,
-		},
-		{
-			label: 'GitHub',
-			icon: 'github',
-			href: 'https://example.com/denys-honchar/github',
-			external: true,
-		},
-		{
-			label: 'Email',
-			icon: 'email',
-			href: 'mailto:hello@volynit.space',
-		},
-	],
-} satisfies Omit<TeamMember, 'role'>;
-
-const createMembers = (count: number, role: string): TeamMember[] =>
-	Array.from({ length: count }, () => ({
-		...DENYS_HONCHAR,
-		role,
-	}));
+const sectionTitles: Record<string, string> = {
+	'Founder / CEO / Full-stack developer': 'Founders',
+	'Product developer': 'Product developers',
+	'SMM specialist': 'SMM specialists',
+	'Client manager': 'Client managers',
+};
 
 @Component({
-	imports: [NgOptimizedImage, TranslateDirective, TranslatePipe],
+	imports: [NgOptimizedImage, TranslateDirective],
 	templateUrl: './our-team.component.html',
 	styleUrl: './our-team.component.scss',
 	changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class OurTeamComponent {
-	protected readonly teamSections: TeamSection[] = [
-		{
-			title: 'Founders',
-			members: createMembers(1, 'Founder / CEO / Full-stack developer'),
-		},
-		{
-			title: 'Product developers',
-			members: createMembers(6, 'Product developer'),
-		},
-		{
-			title: 'SMM specialists',
-			members: createMembers(3, 'SMM specialist'),
-		},
-		{
-			title: 'Client managers',
-			members: createMembers(3, 'Client manager'),
-		},
-	];
+	private readonly _profileService = inject(ProfileService);
+
+	protected readonly teamSections = computed<TeamSection[]>(() => {
+		const sections = new Map<string, Profile[]>();
+
+		for (const profile of this._profileService.profiles()) {
+			const title = sectionTitles[profile.role] ?? profile.role;
+			sections.set(title, [...(sections.get(title) ?? []), profile]);
+		}
+
+		return Array.from(sections, ([title, members]) => ({ title, members }));
+	});
 }

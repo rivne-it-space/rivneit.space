@@ -26,19 +26,19 @@
 		</div>
 
 		<div class="mt-7 grid gap-5 sm:grid-cols-2 lg:grid-cols-3 lg:gap-6">
-			@for (item of merchItems; track item.name) {
+			@for (item of merchItems(); track item.name) {
 				<article
 					class="group flex min-h-full flex-col overflow-hidden rounded-lg border border-[var(--c-border)] bg-[var(--c-bg-elevated)] shadow-[var(--shadow-sm)] transition duration-200 hover:-translate-y-0.5 hover:border-[var(--c-border-strong)] hover:shadow-[var(--shadow-lg)]"
 				>
 					<div class="merch-placeholder">
 						<span class="merch-placeholder__brand">Volyn IT Space</span>
-						<span class="merch-placeholder__label">{{ item.label | translate }}</span>
+						<span class="merch-placeholder__label">{{ item.label }}</span>
 					</div>
 
 					<div class="flex min-h-[16rem] flex-1 flex-col p-4 sm:p-5">
 						<div class="flex items-start justify-between gap-4">
 							<h2 class="text-xl font-semibold leading-7 text-[var(--c-text-secondary)]">
-								{{ item.name | translate }}
+								{{ item.name }}
 							</h2>
 							<p
 								class="shrink-0 rounded-lg border border-[var(--c-border-soft)] bg-[var(--c-bg-soft)] px-3 py-1.5 text-base font-bold leading-none text-[var(--c-secondary)] shadow-[var(--shadow-xs)]"
@@ -48,7 +48,7 @@
 						</div>
 
 						<p class="mt-4 text-sm leading-6 text-[var(--c-text-muted)]">
-							{{ item.description | translate }}
+							{{ item.description }}
 						</p>
 
 						<button
