@@ -1,0 +1,1 @@
+import{$ as r,G as o}from"./chunk-OH4QG5OV.js";var e=class t{products=r([]);static \u0275fac=function(c){return new(c||t)};static \u0275prov=o({token:t,factory:t.\u0275fac,providedIn:"root"})};export{e as a};

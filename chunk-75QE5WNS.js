@@ -1,0 +1,1 @@
+import{a}from"./chunk-2EHAB7UX.js";import"./chunk-WVD62NK3.js";import{Pa as o,xa as t}from"./chunk-OH4QG5OV.js";var p=class n{static \u0275fac=function(e){return new(e||n)};static \u0275cmp=t({type:n,selectors:[["ng-component"]],decls:1,vars:0,template:function(e,i){e&1&&o(0,"app-faq")},dependencies:[a],encapsulation:2,changeDetection:0})};export{p as PublicFaqComponent};
