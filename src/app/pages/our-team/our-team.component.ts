@@ -1,4 +1,4 @@
-﻿import { NgOptimizedImage } from '@angular/common';
+import { NgOptimizedImage } from '@angular/common';
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { TranslateDirective, TranslatePipe } from '@wawjs/ngx-translate';
 
@@ -26,7 +26,7 @@ type TeamSection = {
 const DENYS_HONCHAR = {
 	name: 'Denys Honchar',
 	period: '2016 - Present',
-	company: 'Rivne IT Space',
+	company: 'Volyn IT Space',
 	image: 'profile/honchar-denys.jpg',
 	socials: [
 		{
@@ -44,7 +44,7 @@ const DENYS_HONCHAR = {
 		{
 			label: 'Email',
 			icon: 'email',
-			href: 'mailto:hello@rivneit.space',
+			href: 'mailto:hello@volynit.space',
 		},
 	],
 } satisfies Omit<TeamMember, 'role'>;
